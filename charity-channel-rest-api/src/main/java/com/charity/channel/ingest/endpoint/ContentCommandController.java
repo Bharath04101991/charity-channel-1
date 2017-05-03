@@ -1,23 +1,18 @@
 package com.charity.channel.ingest.endpoint;
 
-import javax.validation.Valid;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-import org.apache.commons.net.nntp.Article;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.charity.channel.assembler.ContentAssembler;
-import com.charity.channel.dto.ContentDTO;
-import com.charity.channel.event.CreateContentEvent;
-import com.charity.channel.resource.ContentResource;
-import com.charity.channel.service.ContentService;
+import com.charity.channel.resource.FileUploadBean;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,13 +21,50 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/v1/content")
 public class ContentCommandController {
 
-	@Autowired
+/*	@Autowired
 	private ContentService contentService;
 	
 	@Autowired
 	private ContentAssembler assembler;
 	
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	*/
+
+	 //Save the uploaded file to this folder
+   private static String UPLOADED_FOLDER = "M://Raj//videotemp//";
+	
+	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public void createArticle(FileUploadBean bean) {
+		
+		log.info("Name : "+bean.getTitle());
+		MultipartFile[] files = bean.getFile();
+		
+		for(MultipartFile file:files){
+			if (file.isEmpty()) {
+	            log.info("Please select a file to upload");
+	        }
+
+	        try {
+	        	
+	        	log.info("########## Content Type :  " + file.getContentType());
+	            // Get the file and save it somewhere
+	            byte[] bytes = file.getBytes();
+	            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+	            Files.write(path, bytes);
+
+	            log.info("######### You successfully uploaded " + file.getOriginalFilename() );
+
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+		}
+		
+				
+	}
+
+	
+	/*@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public HttpEntity<Article> createArticle(@Valid @RequestBody ContentResource resource) {
 
 		ContentDTO contentDTO = assembler.fromResource(resource);
@@ -41,5 +73,8 @@ public class ContentCommandController {
 		contentService.save(request);
 		log.info("createClub() : END");
         return new ResponseEntity<Article>(HttpStatus.OK);
-	}
+	}*/
+	
+	
+	
 }

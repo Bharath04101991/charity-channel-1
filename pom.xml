@@ -21,7 +21,6 @@
 		<module>charity-channel-service-library</module>
 		<module>charity-channel-rest-api</module>
 		<module>charity-channel-event-processor</module> 
-		<module>charity-channel-media-resource-upload</module> 
 		<module>charity-channel-youtube-library</module>
   </modules>
 
