@@ -1,0 +1,13 @@
+
+# Postgres db configuration
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.1.244:5432/greenarkdb
+    username: greenark
+    password: greenark
+  jpa:
+    database_platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
