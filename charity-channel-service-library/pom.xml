@@ -45,6 +45,14 @@
 			<artifactId>charity-channel-data-model</artifactId>
 			<version>0.1.1-SNAPSHOT</version>
 	</dependency>
+	
+	<dependency>
+			<groupId>com.charity</groupId>
+			<artifactId>charity-channel-youtube-library</artifactId>
+			<version>0.1.1-SNAPSHOT</version>
+	</dependency>
+	
+	
 	<dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>

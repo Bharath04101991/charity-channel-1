@@ -22,5 +22,5 @@ import lombok.experimental.Accessors;
 public class TextResource extends ResourceSupport {
   private Long textId;
   private String title;
-  private String description;
+  private String body;
 }
