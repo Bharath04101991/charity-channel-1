@@ -1,8 +1,10 @@
 package com.charity.channel.data.model;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -52,60 +54,104 @@ public class CharitableUser extends AbstractAuditEntity implements Serializable 
 	@Id
 	@GeneratedValue(generator = "charitable_user_seq")
 	@Column(name = "charitable_user_id", nullable = false)
-	private Long CharitableUserId;
+	private Long id;
 	
-	@Column(name = "first_name")
-	private String firstName;
-	
-	@Column(name = "last_name")
-	private String lastName;
-	
+	@Column(name = "email", unique = true)
 	private String email;
-	
-	private String phoneNumber;
+
+	@Column(name = "mobile_number", unique = true)
+	private String mobileNumber;
+
+	@Column(name = "device_token_id")
+	private String deviceTokenId;
+
+	@Column(name = "name")
+	private String username;
+
+	@Column(name = "first_name")
+	private String firstname;
+
+	@Column(name = "last_name")
+	private String lastname;
+
+	@Column(name = "isEnabled", nullable = true)
+	private Boolean isEnabled;
+
+	@Column(name = "password", nullable = true)
+	private String password;
+
+	@Column(name = "password_reset_token")
+	private String passwordResetToken;
+
+	@Column(name = "password_reset_expiration_time")
+	private Date pswdResetExpireTime;
+
+	@Column(name = "last_login_time")
+	private Timestamp lastLoginTime;
+
+	@Column(name = "last_logout_time")
+	private Timestamp lastLogoutTime;
+
+	@Column(name = "api_key")
+	private String apiKey;
+
+	@Column(name = "device_type")
+	private String deviceType;
+
+	@Column(name = "last_password_reset_date")
+	private Date lastPasswordResetDate;
+
+	private Timestamp registeredDate;
 	
 	@Column(name = "dob")
 	private Date dateOfBirth;
 	
 	private String country;
 	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "USER_AUTHORITY", joinColumns = {
+			@JoinColumn(name = "USER_ID", referencedColumnName = "charitable_user_id") }, inverseJoinColumns = {
+					@JoinColumn(name = "AUTHORITY_ID", referencedColumnName = "ID") })
+	private List<Authority> authorities;
+	
+	/*
 	@Enumerated(EnumType.STRING)
 	@Column(name = "account_status")
-	private AccountStatusEnum status;
+	private AccountStatusEnum status;*/
 	
-    @OneToMany(mappedBy="users")
+    @OneToMany(mappedBy="users", fetch = FetchType.LAZY)
     private Set<Content> contents = new HashSet<Content>();
     
-    @OneToMany(mappedBy="users")
+    @OneToMany(mappedBy="users", fetch = FetchType.LAZY)
     private Set<Share> shares = new HashSet<Share>();
     
-    @OneToMany(mappedBy="users")
+    @OneToMany(mappedBy="users", fetch = FetchType.LAZY)
     private Set<UserComment> comments = new HashSet<UserComment>();
     
-    @OneToMany(mappedBy="createdBy")
+    @OneToMany(mappedBy="createdBy", fetch = FetchType.LAZY)
     private Set<Tag> tags = new HashSet<Tag>();
     
-    @OneToMany(mappedBy="follower")
+    @OneToMany(mappedBy="follower", fetch = FetchType.LAZY)
     private Set<FollowerDetail> followers = new HashSet<FollowerDetail>();
     
-    @OneToMany(mappedBy="followed")
+    @OneToMany(mappedBy="followed", fetch = FetchType.LAZY)
     private Set<FollowerDetail> followed = new HashSet<FollowerDetail>();
     
     
-    @OneToMany(mappedBy="inviter")
+    @OneToMany(mappedBy="inviter", fetch = FetchType.LAZY)
     private Set<InviteDetail> inviters = new HashSet<InviteDetail>();
     
-    @OneToMany(mappedBy="invitee")
+    @OneToMany(mappedBy="invitee", fetch = FetchType.LAZY)
     private Set<InviteDetail> invitees = new HashSet<InviteDetail>();
     
     
     
 	// This end is the owner of the association   
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+ /*   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name= "user_role", 
                    joinColumns = {@JoinColumn(name="charitable_user_id")},
                    inverseJoinColumns = {@JoinColumn(name="role_id")})
-    private Set<Role> roles = new HashSet<Role>();  
+    private Set<Role> roles = new HashSet<Role>();*/  
     
  // This end is the owner of the association   
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

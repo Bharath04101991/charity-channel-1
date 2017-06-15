@@ -1,4 +1,4 @@
-package com.charity.channel.data.model;
+/*package com.charity.channel.data.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -21,9 +21,9 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 import lombok.Builder;
 
-/**
+*//**
  * User permissions.
- * */
+ * *//*
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -52,3 +52,4 @@ public class Permission  extends AbstractAuditEntity implements Serializable {
     @ManyToMany(mappedBy = "permissions")
     private Set<Role> roles = new HashSet<Role>();   
 }
+*/

@@ -1,4 +1,4 @@
-package com.charity.channel.data.model;
+/*package com.charity.channel.data.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -25,9 +25,9 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 import lombok.Builder;
 
-/**
+*//**
  * Roles can be associated to users and with a set of permissions
- * */
+ * *//*
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -59,3 +59,4 @@ public class Role  extends AbstractAuditEntity  implements Serializable {
                    inverseJoinColumns = {@JoinColumn(name="permission_id")})
     private Set<Permission> permissions = new HashSet<Permission>();  
 }
+*/

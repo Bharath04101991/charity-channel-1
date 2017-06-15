@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+   <!-- parent coordinates -->
+  <parent>
+  	<artifactId>charity-channel</artifactId>
+    <groupId>com.charity</groupId>
+    <version>0.1.1-SNAPSHOT</version>
+   </parent>
+   
+   
+   <!-- project coordinates -->
+  <artifactId>charity-channel-elastic-data-model</artifactId>
+  <name>charity-channel-elastic-data-model</name>
+  <packaging>jar</packaging>
+  <description>charity-channel-elastic-data-model</description>
+
+ 
+ <!-- project dependencies -->
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-elasticsearch</artifactId>
+			<version>2.0.1.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+    
+     
+    <dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+	<!-- 	<version>1.16.4</version> -->
+		<scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>12.0</version>
+</dependency>
+  </dependencies>
+
+  <properties>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+    <start-class>com.charity.channel.Application</start-class>
+    <java.version>1.8</java.version>
+  </properties>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+            
+        </plugins>
+    </build>
+
+
+</project>
