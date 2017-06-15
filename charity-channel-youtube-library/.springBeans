@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.charity.channel.Application</config>
+		<config>java:com.charity.channel.search.Application</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

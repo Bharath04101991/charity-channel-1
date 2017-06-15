@@ -20,6 +20,6 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
 public class VideoResource extends ResourceSupport {
-  private Long videoId;
+  private String videoId;
   private String videoUrl;
 }

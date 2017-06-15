@@ -23,7 +23,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
 public class ContentResource extends ResourceSupport {
-  private Long contentId;
+  private String contentId;
   private String mediaType;
   private Date createdAt;
   private TextResource text;

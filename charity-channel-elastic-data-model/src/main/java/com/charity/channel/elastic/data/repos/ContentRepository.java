@@ -13,7 +13,8 @@ import com.charity.channel.elastic.data.model.Content;
 import com.charity.channel.elastic.data.model.Professional;
 
 @Repository
-public interface ContentRepository extends ElasticsearchRepository<Content, String> {
+public interface ContentRepository extends ElasticsearchRepository<Content, String>
+ {
 
     Page<Content> findByProfessional(String name, Pageable pageable);
 

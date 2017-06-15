@@ -20,6 +20,6 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
 public class ImageResource extends ResourceSupport {
-  private Long imageId;
+  private String imageId;
   private String imageUrl;
 }

@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
 public class TextResource extends ResourceSupport {
-  private Long textId;
+  private String textId;
   private String title;
   private String body;
 }

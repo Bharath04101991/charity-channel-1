@@ -42,7 +42,7 @@
 	
 	 <dependency>
 			<groupId>com.charity</groupId>
-			<artifactId>charity-channel-service-library</artifactId>
+			<artifactId>charity-channel-elastic-service-library</artifactId>
 			<version>0.1.1-SNAPSHOT</version>
 	</dependency>
 <!-- 	<dependency>
