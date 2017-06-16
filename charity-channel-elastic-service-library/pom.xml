@@ -47,6 +47,13 @@
 	</dependency>
 	
 	<dependency>
+			<groupId>com.charity</groupId>
+			<artifactId>charity-channel-common-service-library</artifactId>
+			<version>0.1.1-SNAPSHOT</version>
+	</dependency>
+	
+	
+	<dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.7.0</version>

@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 public class Professional {
 
-	private String professionalId;	
+	private Long professionalId;	
 	
 	private String role;	
 	

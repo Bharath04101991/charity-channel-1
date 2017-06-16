@@ -10,7 +10,7 @@
      <version>0.1.1-SNAPSHOT</version>
   </parent>
   
-  <artifactId>charity-channel-event-processor</artifactId>
+  <artifactId>charity-channel-data-service-library</artifactId>
   <packaging>jar</packaging>
 
   
@@ -42,19 +42,27 @@
 	
 	 <dependency>
 			<groupId>com.charity</groupId>
-			<artifactId>charity-channel-data-service-library</artifactId>
+			<artifactId>charity-channel-data-model</artifactId>
 			<version>0.1.1-SNAPSHOT</version>
 	</dependency>
+	
+	<dependency>
+			<groupId>com.charity</groupId>
+			<artifactId>charity-channel-youtube-library</artifactId>
+			<version>0.1.1-SNAPSHOT</version>
+	</dependency>
+	
+	
 	<dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.7.0</version>
         </dependency>
-  <dependency>
+  <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
+        </dependency> -->
+       <!--  <dependency>
             <groupId>org.springframework.mobile</groupId>
             <artifactId>spring-mobile-device</artifactId>
         </dependency>
@@ -93,7 +101,7 @@
 				<groupId>commons-net</groupId>
 				<artifactId>commons-net</artifactId>
 				<version>3.3</version>
-			</dependency>
+			</dependency> -->
 
   </dependencies>
 

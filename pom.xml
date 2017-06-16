@@ -20,9 +20,10 @@
 		<module>charity-channel-data-model</module>
 		<module>charity-channel-elastic-data-model</module>
 		<module>charity-channel-elastic-service-library</module>
-		<module>charity-channel-service-library</module>
-		<module>charity-channel-ingest-api</module>
-		<module>charity-channel-search-api</module>
+		<module>charity-channel-data-service-library</module>
+		<module>charity-channel-common-service-library</module>
+		<module>charity-channel-ingest-app</module>
+		<module>charity-channel-search-app</module>
 		<module>charity-channel-event-processor</module> 
 		<module>charity-channel-youtube-library</module>
   </modules>

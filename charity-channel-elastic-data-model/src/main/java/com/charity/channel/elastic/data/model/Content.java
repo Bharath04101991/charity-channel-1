@@ -31,7 +31,7 @@ import lombok.experimental.Accessors;
 public class Content {
 
 	@Id
-	private String contentId;
+	private Long contentId;
 
 	private String contentSource; // Here contentSource can be self or twitter
 

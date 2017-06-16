@@ -1,7 +1,8 @@
-package com.charity.channel.elastic.data.model;
+package com.charity.channel.resource;
+
+import org.springframework.hateoas.ResourceSupport;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,17 +13,15 @@ import lombok.experimental.Accessors;
 
 
 @NoArgsConstructor
-@Builder
 @AllArgsConstructor
+@Builder
 @Data
 @Accessors(chain = true)
-@JsonInclude(value=Include.NON_DEFAULT)
 @EqualsAndHashCode(callSuper = false)
-public class Video {
+@JsonInclude(JsonInclude.Include.USE_DEFAULTS)
+public class TagResource extends ResourceSupport {
+	private Long tagId;
 
-	//@Id
-	private Long videoId;	
-	
-	private String videoUrl;	
-	
+	private String name;
+
 }

@@ -22,7 +22,7 @@ import lombok.experimental.Accessors;
 public class Text {
 
 // @Id
-	 private String textId;
+	 private Long textId;
 
 	// @MultiField(mainField = @Field(type = String), otherFields = { @InnerField(index = not_analyzed, suffix = "verbatim", type = String) })
 	 private String title;

@@ -12,15 +12,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import com.charity.channel.dto.ContentDTO;
+import com.charity.channel.dto.ImageDTO;
+import com.charity.channel.dto.TextDTO;
+import com.charity.channel.dto.VideoDTO;
 import com.charity.channel.elastic.data.model.Content;
 import com.charity.channel.elastic.data.model.Image;
 import com.charity.channel.elastic.data.repos.ContentRepository;
-import com.charity.channel.search.dto.ContentDTO;
-import com.charity.channel.search.dto.ImageDTO;
-import com.charity.channel.search.dto.TextDTO;
-import com.charity.channel.search.dto.VideoDTO;
-import com.charity.channel.search.event.PageReadEvent;
-import com.charity.channel.search.event.ReadContentSetEvent;
+import com.charity.channel.event.PageReadEvent;
+import com.charity.channel.event.ReadContentSetEvent;
 import com.charity.channel.search.util.Utility;
 
 import lombok.extern.slf4j.Slf4j;
@@ -74,7 +74,7 @@ public interface ContentQueryService {
 				
 				ContentDTO contentDTO = ContentDTO.builder().contentId(record.getContentId())
 															.textDTO(testDTO)
-															.imagesDTO(listOfImages)
+															.listOfImages(listOfImages)
 															.videoDTO(videoDTO)
 															.build();
 				

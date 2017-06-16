@@ -10,7 +10,7 @@
      <version>0.1.1-SNAPSHOT</version>
   </parent>
   
-  <artifactId>charity-channel-event-processor</artifactId>
+  <artifactId>charity-channel-search-app</artifactId>
   <packaging>jar</packaging>
 
   
@@ -42,10 +42,10 @@
 	
 	 <dependency>
 			<groupId>com.charity</groupId>
-			<artifactId>charity-channel-data-service-library</artifactId>
+			<artifactId>charity-channel-elastic-service-library</artifactId>
 			<version>0.1.1-SNAPSHOT</version>
 	</dependency>
-	<dependency>
+<!-- 	<dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.7.0</version>
@@ -62,9 +62,9 @@
   <groupId>org.apache.commons</groupId>
   <artifactId>commons-lang3</artifactId>
   <version>3.1</version>
-</dependency>
+</dependency> -->
 
-<dependency>
+<!-- <dependency>
    <groupId>org.apache.commons</groupId>
 <artifactId>commons-lang3</artifactId>
 <version>3.3.2</version>
@@ -93,7 +93,54 @@
 				<groupId>commons-net</groupId>
 				<artifactId>commons-net</artifactId>
 				<version>3.3</version>
-			</dependency>
+			</dependency> -->
+			
+			 <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.hateoas</groupId>
+      <artifactId>spring-hateoas</artifactId>
+    </dependency>
+    
+    <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk</artifactId>
+    <version>1.9.6</version>
+</dependency>
+   
+    
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>amazon-sqs-java-messaging-lib</artifactId>
+            <version>1.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.amazonaws</groupId>
+                    <artifactId>aws-java-sdk-sqs</artifactId>
+                </exclusion>
+            </exclusions>
+ </dependency>
+    
+    
+    <dependency>
+    <groupId>org.elasticmq</groupId>
+    <artifactId>elasticmq-rest-sqs_2.11</artifactId>
+    <version>0.13.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.elasticmq/elasticmq-server_2.11 -->
+<dependency>
+    <groupId>org.elasticmq</groupId>
+    <artifactId>elasticmq-server_2.11</artifactId>
+    <version>0.13.2</version>
+</dependency>
+    
 
   </dependencies>
 

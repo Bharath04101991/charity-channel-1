@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 // @Document(indexName = "blog", type = "text")
 public class Tag {
 
-	private String tagId;
+	private Long tagId;
 
 	private String name;
 

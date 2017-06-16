@@ -22,7 +22,7 @@ import lombok.experimental.Accessors;
 public class Image {
 
 	//@Id
-	private String imageId;	
+	private Long imageId;	
 	
 	private String imageUrl;	
 	
