@@ -31,12 +31,12 @@ public class ContentAssembler extends ResourceAssemblerSupport<ContentDTO, Conte
 		
 		
 		TextResource textResource = TextResource.builder()
-												.textId(entity.getTextDTO().getTextContentId())
+												.textId(entity.getTextDTO().getTextId())
 												.title(entity.getTextDTO().getTitle())
 												.build();
 		
 		VideoResource videoResource = VideoResource.builder()
-												   .videoId(entity.getVideoDTO().getVideoContentId())
+												   .videoId(entity.getVideoDTO().getVideoId())
 												   .videoUrl(entity.getVideoDTO().getVideoUrl())
 												   .build();
 		
@@ -49,7 +49,7 @@ public class ContentAssembler extends ResourceAssemblerSupport<ContentDTO, Conte
 		for(ImageDTO imageDetail :listOfImages){
 			
 			ImageResource imageResource = ImageResource.builder()
-													   .imageId(imageDetail.getImageContentId())	
+													   .imageId(imageDetail.getImageId())	
 													   .imageUrl(imageDetail.getImageUrl())
 													   .build();
 			imageResources.add(imageResource);

@@ -4,9 +4,10 @@
   <comment>Parent pom providing dependency and plugin management for applications
 		built with Maven. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
   <projects>
-    <project>charity-channel-service-library</project>
+    <project>charity-channel-data-service-library</project>
     <project>charity-channel-data-model</project>
     <project>charity-channel-youtube-library</project>
+    <project>charity-channel-common-service-library</project>
   </projects>
   <buildSpec>
     <buildCommand>

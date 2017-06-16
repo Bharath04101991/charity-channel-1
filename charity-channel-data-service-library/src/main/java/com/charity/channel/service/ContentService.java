@@ -53,7 +53,7 @@ public interface ContentService {
 
 			TextContent textContent = null;
 			if (Utility.isNotEmpty(contentDTO.getTextDTO())) {
-				textContent = TextContent.builder().id(contentDTO.getTextDTO().getTextContentId())
+				textContent = TextContent.builder().id(contentDTO.getTextDTO().getTextId())
 												   .text(contentDTO.getTextDTO().getText())
 												   .title(contentDTO.getTextDTO().getTitle())
 												   .build();
@@ -61,7 +61,7 @@ public interface ContentService {
 
 			VideoContent videoContent = null;
 			if (Utility.isNotEmpty(contentDTO.getVideoDTO())) {
-				videoContent = VideoContent.builder().id(contentDTO.getVideoDTO().getVideoContentId())
+				videoContent = VideoContent.builder().id(contentDTO.getVideoDTO().getVideoId())
 													 .videoContentUrl(contentDTO.getVideoDTO().getVideoUrl())
 													 .build();
 			}
@@ -86,7 +86,7 @@ public interface ContentService {
 				listOfImages = contentDTO.getListOfImages();
 				log.info("Images Size : " + listOfImages.size());
 				for (ImageDTO imageDetail : listOfImages) {
-					ImageContent image = ImageContent.builder().id(imageDetail.getImageContentId())
+					ImageContent image = ImageContent.builder().id(imageDetail.getImageId())
 															   .imageUrl(imageDetail.getImageUrl())
 															   .build();
 					images.add(image);
