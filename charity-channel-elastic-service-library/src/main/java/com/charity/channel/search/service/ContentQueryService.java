@@ -65,7 +65,7 @@ public interface ContentQueryService {
 														   .imageUrl(image.getImageUrl())
 														   .build();
 					listOfImages.add(imageDTO);
-				}
+			 }
 				
 				VideoDTO videoDTO = VideoDTO.builder()
 											.videoId(record.getVideo().getVideoId())
